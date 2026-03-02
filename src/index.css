@@ -1,0 +1,122 @@
+body {
+    background-color: hsl(0, 0%, 10%);
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    transition: 0.35s ease;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.title {
+    color: white;
+    font-size: 4em;
+    text-decoration: underline 5px;
+    animation: drop 1s ease;
+}
+
+@keyframes drop {
+    from {
+        translate: 0 -150px;
+    }
+    to {
+        translate: 0 0;
+    }
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.input-container > input {
+    padding: 15px;
+    border: 0;
+    font-size: 1.4em;
+    border-radius: 50px;
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    color: hsl(0, 0%, 30%);
+}
+.input-container > button {
+    background-color: hsl(120, 100%, 37%);
+    color: white;
+    outline: 0;
+    border: none;
+    border-radius: 50px;
+    padding: 0 10px;
+    padding-right: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.4em;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.input-container > button:hover {
+    background-color: hsl(120, 100%, 28%);
+}
+
+main ul {
+    color: black;
+    list-style-type: none;
+    padding: 0;
+}
+
+main ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px;
+    background-color: white;
+    border: 3px solid hsla(0, 0%, 42%, 0.582);
+    margin: 8px 0;
+    border-radius: 4px;
+    overflow: auto;
+}
+
+main ul li h2 {
+    text-align: center;
+    font-size: 1.6em;
+    margin: auto;
+}
+
+.btn-container {
+    display: flex;
+}
+
+.btn,
+.btnDisabled {
+    background-color: hsl(203, 100%, 59%);
+    outline: 0;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1.05em;
+    border-radius: 5px;
+    padding: 8px;
+    margin: 0 3px;
+}
+.btnDisabled {
+    background-color: hsl(0, 0%, 40%);
+    pointer-events: none;
+}
+
+.btn:hover {
+    background-color: hsl(203, 100%, 40%);
+}
+
+.btn:first-child {
+    background-color: hsl(0, 100%, 55%);
+    color: white;
+}
+
+.btn:first-child:hover {
+    background-color: hsl(0, 100%, 35%);
+}
