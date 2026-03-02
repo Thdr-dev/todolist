@@ -14,12 +14,16 @@ function ToDoList() {
         if (newTask.trim() !== "") {
             setTasks((t) => [...t, newTask]);
             setNewTask("");
-            localStorage.setItem("tasks", JSON.stringify(tasks));
+            handleSaveLocalStorage();
         }
     }
 
     function handleRemoveTask(index) {
         setTasks((t) => t.filter((_, i) => i !== index));
+        handleSaveLocalStorage();
+    }
+
+    function handleSaveLocalStorage() {
         localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
