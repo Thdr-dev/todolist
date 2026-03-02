@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function ToDoList() {
     const [tasks, setTasks] = useState(
@@ -14,17 +14,15 @@ function ToDoList() {
         if (newTask.trim() !== "") {
             setTasks((t) => [...t, newTask]);
             setNewTask("");
-            handleSaveLocalStorage();
         }
     }
 
+    useEffect(() => {
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+    }, [tasks]);
+
     function handleRemoveTask(index) {
         setTasks((t) => t.filter((_, i) => i !== index));
-        handleSaveLocalStorage();
-    }
-
-    function handleSaveLocalStorage() {
-        localStorage.setItem("tasks", JSON.stringify(tasks));
     }
 
     function handleMoveTaskUp(index) {
